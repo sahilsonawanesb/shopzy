@@ -92,29 +92,57 @@ const Transaction = () => {
     toast.error(err.data.message);
   }
     
-  useEffect(() => {
-    if(data)
-      setRows(
-        data?.orders.map((i) => ({
-          user : i.user?.name,
-          amount : i.total,
-          discount : i.discount,
-          quantity : i.orderItems.length,
-          status : <span 
-            className={
-              i.status === "Processing" 
-              ? "red" 
-              : i.status === "Shipped" 
-              ? "green"
-              : "purple"
-              }>{i.status}</span>,
+  // useEffect(() => {
+  //   if(data)
+  //     setRows(
+  //       data.orders.map((i) => ({
+  //         user : i.user?.name,
+  //         amount : i.total,
+  //         discount : i.discount,
+  //         quantity : i.orderItems.length,
+  //         status : <span 
+  //           className={
+  //             i.status === "Processing" 
+  //             ? "red" 
+  //             : i.status === "Shipped" 
+  //             ? "green"
+  //             : "purple"
+  //             }>{i.status}</span>
         
-          action : <Link to={`/admin/transaction/${i._id}`}>Manage</Link>
-        }))
-    );
+  //         action : <Link to={`/admin/transaction/${i._id}`}>Manage</Link>
+  //       }))
+  //   );
 
  
+  // }, [data]);
+
+const userName = user?.name;
+  useEffect(() => {
+    if (data)
+      setRows(
+        data.orders.map((i) => ({
+          user: userName! ,
+          amount: i.total,
+          discount: i.discount,
+          quantity: i.orderItems.length,
+          status: (
+            <span
+              className={
+                i.status === "Processing"
+                  ? "red"
+                  : i.status === "Shipped"
+                  ? "green"
+                  : "purple"
+              }
+            >
+              {i.status}
+            </span>
+          ),
+          action: <Link to={`/admin/transaction/${i._id}`}>Manage</Link>,
+        }))
+      );
   }, [data]);
+
 
   const Table = TableHOC<DataType>(
     columns,

@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
-import ProductCart from '../components/productCart';
-import { BiArrowBack } from 'react-icons/bi';
-import { useNavigate } from 'react-router-dom';
-import { useCategoriesQuery, useSearchProductsQuery } from '../redux/api/productAPI';
-import { CustomError } from '../types/api-types';
+import { useState } from 'react';
 import toast from 'react-hot-toast';
-import { Skeleton } from '../components/loader';
-import { CartItem } from '../types/types';
+import { BiArrowBack } from 'react-icons/bi';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { Skeleton } from '../components/loader';
+import ProductCart from '../components/productCart';
+import { useCategoriesQuery, useSearchProductsQuery } from '../redux/api/productAPI';
 import { addToCart } from '../redux/reducer/cartReducer';
-// import { FaSearch } from 'react-icons/fa';
+import { CustomError } from '../types/api-types';
+import { CartItem } from '../types/types';
+
 
 const Search = () => {
 

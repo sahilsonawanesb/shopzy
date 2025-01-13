@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-non-null-asserted-optional-chain */
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { FaTrash } from "react-icons/fa";
-import AdminSidebar from "../../../components/admin/AdminSidebar";
 import { useSelector } from "react-redux";
-import { userReducerInitialState } from "../../../types/reducer-types";
-import { useDeleteProductMutation, useProductDetailsQuery, useUpdateProductMutation } from "../../../redux/api/productAPI";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
-import { server } from "../../../redux/store";
+import AdminSidebar from "../../../components/admin/AdminSidebar";
 import { Skeleton } from "../../../components/loader";
+import { useDeleteProductMutation, useProductDetailsQuery, useUpdateProductMutation } from "../../../redux/api/productAPI";
+import { server } from "../../../redux/store";
+import { userReducerInitialState } from "../../../types/reducer-types";
 import { responseToast } from "../../../utils/features";
 
 

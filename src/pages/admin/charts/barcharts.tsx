@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-non-null-asserted-optional-chain */
+import toast from "react-hot-toast";
 import { useSelector } from "react-redux";
 import AdminSidebar from "../../../components/admin/AdminSidebar";
 import { BarChart } from "../../../components/admin/Charts";
+import { Skeleton } from "../../../components/loader";
+import { useBarQuery } from "../../../redux/api/dashboardAPI";
 import { RootState } from "../../../redux/store";
 import { CustomError } from "../../../types/api-types";
-import toast from "react-hot-toast";
-import { useBarQuery } from "../../../redux/api/dashboardAPI";
-import { Skeleton } from "../../../components/loader";
 import { getLastMonths } from "../../../utils/features";
 
 

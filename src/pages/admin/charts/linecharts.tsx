@@ -2,13 +2,13 @@
 import { useSelector } from "react-redux";
 import AdminSidebar from "../../../components/admin/AdminSidebar";
 import { LineChart } from "../../../components/admin/Charts";
-import { getLastMonths } from "../../../utils/features";
-import { RootState } from "../../../redux/store";
 import { useLineQuery } from "../../../redux/api/dashboardAPI";
+import { RootState } from "../../../redux/store";
+import { getLastMonths } from "../../../utils/features";
 // import { CustomError } from "../../../types/api-types";
 // import { toast } from "react-hot-toast";
-import { Skeleton } from "../../../components/loader";
 import { Navigate } from "react-router-dom";
+import { Skeleton } from "../../../components/loader";
 
 
 const {last12Months} = getLastMonths();
