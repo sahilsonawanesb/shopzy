@@ -1,5 +1,3 @@
-
-
 const Loader = () => {
   return (
     <section className="loader">
