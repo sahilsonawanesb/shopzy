@@ -1,0 +1,26 @@
+import React from 'react'
+
+const Loader = () => {
+  return (
+    <section className="loader">
+    <div></div>
+  </section>
+  )
+}
+export default Loader;
+
+interface SkeletonProps {
+  width? : string,
+  length? : number,
+};
+
+export const Skeleton = ({ width = "unset", length = 3 } : SkeletonProps ) => { 
+
+  const Skeletions = Array.from({ length }, (_, idx) => (
+    <div key = {idx} className="skeleton-shape"></div>
+  ));
+
+  return <div className="skeleton-loader" style={{width}}>
+    {Skeletions}
+  </div>
+};
