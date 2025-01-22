@@ -2,6 +2,8 @@
 
 Hi! My name is **Sahil Sonawane**, I have created this project to learn & get's hands-on experience in MERN Stack.
 
+# Live Demo
+https://shopzy-tau.vercel.app/
 
 # Technologies Used
 
